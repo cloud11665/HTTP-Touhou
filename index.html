@@ -5,9 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HTTP Touhou</title>
 	<script>
+		var codes = [101, 200, 201, 204, 300, 303, 401, 402, 403, 406, 409, 410, 418, 422, 423, 429, 451];
+		var url = window.location.href;
 
+		//console.log(window.location.pathname)
+
+		url.replace("")
+		url = url.endsWith("/") ? url.slice(0, url.size-1) : url;
+		url = url.endsWith("index.html") ? url.slice(0, url.size-10) : url;
+		url = url.endsWith("/") ? url.slice(0, url.size-1) : url;
+
+		var rand = Math.floor(Math.random()*codes.length);
+
+		//console.log(rand)
+		//console.log(codes[rand])
+		//console.log(`${url}/${codes[rand]}.jpg`)
+		window.location.replace(`${url}/${codes[rand]}.jpg`);
 	</script>
 </head>
 <body>
+	mokou
 </body>
 </html>
